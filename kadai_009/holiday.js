@@ -5,11 +5,11 @@ const holidays = [
 let n = holidays.length;
 let m = n - 1;
 
-for (let i = 1; i <= m; i += 1) {
+for (let i = 0; i <= m; i += 1) {
   console.log(holidays[i]);
 }
 
-let num = 0;
+let num = -1;
 
 while (num !== m) {
   num += 1;
