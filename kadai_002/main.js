@@ -8,6 +8,7 @@ const wrap = document.getElementById('wrap');
 const start = document.getElementById('start');
 const count = document.getElementById('count');
 const typingCount = document.getElementById('typing-count');
+const timeUp = document.getElementById('time-up');
 
 const textLists = [
   'Hello World', 'This is my App', 'How are you?',
@@ -32,7 +33,6 @@ const createText = () => {
   let random = Math.floor(Math.random() * textLists.length);
   untyped = textLists[random];
   untypedfield.textContent = untyped;
-
 };
 
 const keyPress = e => {
@@ -79,8 +79,9 @@ const rankCheck = score => {
 const gameOver = id => {
 
   setTimeout(() => {
-    wrap.textContent = 'タイムアップ！';
-    typedfield.style.display = 'none';
+    typedfield.style.display = "none";
+    timeUp.textContent = 'タイムアップ！';
+    
   },10);
 
   clearInterval(id);
