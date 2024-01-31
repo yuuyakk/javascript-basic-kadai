@@ -77,10 +77,14 @@ const rankCheck = score => {
 
 // ゲームを終了
 const gameOver = id => {
+
+  setTimeout(() => {
+    wrap.textContent = 'タイムアップ！';
+    typedfield.style.display = 'none';
+  },10);
+
   clearInterval(id);
-
   const result = confirm(rankCheck(score));
-
   if (result == true) {
     window.location.reload();
   }
@@ -108,12 +112,6 @@ start.addEventListener('click', () => {
   start.style.display = 'none';
   typingCount.style.display = 'inline-block';
   document.addEventListener('keypress', keyPress);
-  setTimeout(() => {
-    wrap.textContent = 'タイムアップ！';
-    typedfield.style.display = 'none';
-  },60000);  
 });
-
-
 
 untypedfield.textContent = 'スタートボタンで開始';
